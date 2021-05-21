@@ -671,7 +671,7 @@ def test():
 
 
 def main():
-    IN_PATH = 'example'
+    IN_PATH = '/Users/bluzy/Documents/Reciepts'
     OUT_PATH = 'result.xlsx'
     DEBUG = False
     # parse params
@@ -689,7 +689,7 @@ def main():
     if DEBUG:
         test()
         sys.exit(0)
-    # run programme
+    # run program
     print(
         f'run {"test" if IN_PATH == "example" else "extracting"} mode, load data from directory {IN_PATH}.\n{"*" * 50}')
     files_path = load_files(IN_PATH)

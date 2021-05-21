@@ -25,7 +25,7 @@
 - 安装依赖包：
 
   ```shell
-  python -m pip install -r requirements.txt
+  pip install -r requirements.txt
   ```
   
 - 准备数据
