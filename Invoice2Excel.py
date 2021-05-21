@@ -673,7 +673,7 @@ def test():
 def main():
     IN_PATH = '/Users/bluzy/Documents/Reciepts'
     OUT_PATH = 'result.xlsx'
-    DEBUG = False
+    DEBUG = True
     # parse params
     opts, args = getopt.getopt(sys.argv[1:], 'p:ts:', ['test', 'path=', 'save=', 'debug'])
     for opt, arg in opts:
@@ -721,5 +721,5 @@ def main():
     print(f'{"*" * 50}\nALL DONE. THANK YOU FOR USING MY PROGRAMME. GOODBYE!\n{"*" * 50}')
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
