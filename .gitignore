@@ -6,3 +6,7 @@ Analysis.ipynb
 res1.txt
 target
 venv/*
+*.xlsx
+.DS_Store
+*.png
+*.log
