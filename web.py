@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 from Invoice2Excel import Extractor
 import pandas as pd
+from IPython.display import HTML
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'upload/'
@@ -32,6 +33,7 @@ def run(file):
         for name, df in frames.items():
             df.to_excel(writer, sheet_name=name)
     print(f'{"*" * 50}\nALL DONE. THANK YOU FOR USING MY PROGRAMME. GOODBYE!\n{"*" * 50}')
+    return data
 
 @app.route('/', methods=['GET','POST'])
 def upload_file():
@@ -45,9 +47,10 @@ def uploader():
             return jsonify({"error": 1001, "msg": "请检查上传的文件类型，仅限于pdf"})
         print(request.files)
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
-        run(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
+        df = run(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
 
-        return 'file uploaded successfully'
+        # return 'file uploaded successfully'
+        return df.to_html(index=False)
     else:
         return render_template('upload.html')
 if __name__ == '__main__':
