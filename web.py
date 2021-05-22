@@ -3,7 +3,6 @@ from werkzeug.utils import secure_filename
 import os
 from Invoice2Excel import Extractor
 import pandas as pd
-from IPython.display import HTML
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'upload/'
